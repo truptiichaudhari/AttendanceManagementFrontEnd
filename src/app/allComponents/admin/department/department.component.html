@@ -1,0 +1,24 @@
+
+<div class="container">
+    <div class="row justify-content-center my-5">
+      <div class="col-md-6 text-center text-primary bg-white rounded shadow py-3">
+        <p class="h4 mb-4">List Of Departments</p>
+            <table class="table table-striped">
+
+                <thead>
+                <tr>
+                    <th>Department Name</th>
+                    <th>No Of Employees</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let department of departmentList , index as i" >
+                    <td>{{department.departmentName}}</td>
+                    <td>{{department.noOfEmployee}}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>

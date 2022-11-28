@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <div class="col-md-6 text-center text-primary bg-white rounded shadow py-3">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <p class="h4 mb-4">User Registration</p>
+
+        <div class="mb-4">
+          <label for="username">Username</label>
+          <div class="col">
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              placeholder="Enter Username"
+            />
+          </div>
+          <br />
+
+          <label for="password">Password</label>
+          <div class="col">
+            <input
+              type="text"
+              formControlName="password"
+              class="form-control"
+              placeholder="Enter Password"
+            />
+          </div>
+          <br />
+
+          <label for="emailId">Email</label>
+          <div class="col">
+            <input
+              type="text"
+              formControlName="emailId"
+              class="form-control"
+              placeholder="Enter Email"
+            />
+          </div>
+          <br />
+
+          <!-- <label for="department">Department</label>
+          <div class="col">
+            <input
+              type="text"
+              formControlName="department"
+              class="form-control"
+              placeholder="Enter Department Name"
+            />
+          </div> -->
+          <br />
+        </div>
+
+        <div class="col">
+        <label for="department">Department</label>
+          <select formControlName="department" class="form-control" placeholder="Select Department">
+            <option hidden value="" disabled selected>Select one category </option>
+            <option *ngFor="let dept of allDepartments" [ngValue]="dept">
+              {{ dept.departmentName }}
+            </option>
+          </select>
+        </div>
+
+        <small
+          >Are you already registered?
+          <a routerLink="../userlogin" class="text-success">UserLogin</a>
+        </small>
+        <br />
+        <button class="btn btn-info my-4 btn-block" type="submit">
+          Submit
+        </button>
+
+        <hr />
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="container col-md-6">
+    <h1 style="color:brown;">registration</h1> 
+     <form (ngSubmit)="adduser()">
+       
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">password</label>
+      <input type="password" [(ngModel)]="user.password" class="form-control" id="password" name="password">
+      
+
+
+      <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">emailid</label>
+      <input type="emailId" [(ngModel)]="user.emailId" class="form-control" id="emailId" name="emailId">
+       </div>
+
+
+     <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">UserName</label>
+        <input type="text" [(ngModel)]="user.username" class="form-control" id="userName" name="userName">
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">department</label>
+            <input type="text" [(ngModel)]="user.department" class="form-control" id="userName" name="userName">
+  
+ </div>
+ <button type="submit" class="btn btn-primary">Register</button>
+ 
+ </div> -->

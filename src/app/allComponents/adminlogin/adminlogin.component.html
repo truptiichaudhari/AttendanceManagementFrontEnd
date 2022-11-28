@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-center my-5">
+      <div class="col-md-6 text-center text-primary bg-white rounded shadow py-3">
+  
+  
+  <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+  
+    <p class="h4 mb-4">Admin Login</p>
+  
+    <div class=" mb-4">
+        <div class="col">
+          <label for="username">Username</label>
+            <input type="text" formControlName="username"  class="form-control" placeholder="Enter Admin Username">
+        </div>
+        <br>
+        <div class="col">
+            <label for="password">Password</label>
+            <input type="text" formControlName="password"  class="form-control" placeholder="Enter Password">
+        </div>
+        <br>
+  
+        <br>
+        <button class="btn btn-info my-4 btn-block" type="submit">Sign-In</button>
+  
+    </div>
+      </form>
+  
+      </div>
+    </div>
+  </div>
+  

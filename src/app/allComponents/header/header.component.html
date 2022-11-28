@@ -1,0 +1,47 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; ">
+    <a class="navbar-brand " style="color :rgb(153, 0, 0)" routerLink=""> <strong>  <i> &nbsp; Attendance Management System</i> </strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink=""  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Home </a>
+        </li>
+  
+      </ul>
+    </div>
+  
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item mr-auto">
+        <a *ngIf="!_user.isUserLoggedIn()" class="nav-link" routerLink="/adminlogin"  routerLinkActive="active">AdminLogin</a>
+      </li>
+
+      <li class="nav-item mr-auto">
+        <a *ngIf="!_user.isUserLoggedIn()" class="nav-link" routerLink="/userlogin"  routerLinkActive="active">UserLogin</a>
+      </li>
+      
+      <li class="nav-item mr-auto">
+        <a *ngIf="!_user.isUserLoggedIn()" class="nav-link" routerLink="/registeruser"  routerLinkActive="active">RegisterUser</a>
+      </li>
+      
+      <li class="nav-item mr-auto">
+        <a *ngIf="isAdminUser()" class="nav-link" routerLink="/admin/departments" routerLinkActive="active">Departments</a>
+      </li>
+      <li class="nav-item mr-auto">
+        <a *ngIf="isAdminUser()" class="nav-link" routerLink="/admin/userslist" routerLinkActive="active">Users</a>
+      </li>
+
+      <li class="nav-item mr-auto">
+        <a *ngIf="_user.isUserLoggedIn()" (click)="logout()" class="nav-link"  routerLinkActive="active">Logout</a>
+      </li>
+
+    </ul>
+  </nav>
+
+  
+  

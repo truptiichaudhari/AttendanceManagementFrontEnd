@@ -1,0 +1,124 @@
+<div class="container">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Mark Your Attendance
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Attendance</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form [formGroup]="attendanceForm" (ngSubmit)="onSubmit()">
+          <div class="modal-body">
+      
+              <div class="mb-4">
+                <label for="date">Date</label>
+                <div class="col">
+                  <input
+                    type="date"
+                    formControlName="date"
+                    class="form-control"
+                    placeholder="Enter Date"
+                  />
+                </div>
+                <br />
+      
+                <label for="intime">In Time</label>
+                <div class="col">
+                  <input
+                    type="time"
+                    step="1"
+                    formControlName="intime"
+                    class="form-control"
+                    placeholder="Enter intime"
+                  />
+                </div>
+                <br />
+
+                <label for="outtime">Out Time</label>
+                <div class="col">
+                  <input
+                    type="time"
+                    step="1"
+                    formControlName="outtime"
+                    class="form-control"
+                    placeholder="Enter Outtime"
+                  />
+                </div>
+                <br />
+      
+              </div>
+      
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center my-5">
+    <div class="col-md-6 text-center text-primary bg-white rounded shadow py-3">
+      <p class="h4 mb-4">Attendance of {{currentUsername}}</p>
+          <table class="table table-striped">
+
+              <thead>
+              <tr>
+                  <th>Index</th>
+                  <th>Date</th>
+                  <th>In Time</th>
+                  <th>Out Time</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr *ngFor="let attendance of attendanceList , index as i" >
+                <td>{{i+1}}</td>
+                  <td>{{attendance.date | date}}</td>
+                  <td>{{attendance.intime}}</td>
+                  <td>{{attendance.outtime}}</td>
+              </tr>
+          </tbody>
+          </table>
+      </div>
+  </div>
+
+</div>
+<!-- Table -->
+  <!-- <hr>
+  <table class="table">
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      table th,
+      table td {
+        border: 1px solid black;
+        padding: 10px 20px;
+      }
+    </style>
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">In Time</th>
+        <th scope="col">Out Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let attendance of attendanceList">
+        <td>{{ attendance.date | date}}</td>
+        <td>{{ attendance.intime }}</td>
+        <td>{{ attendance.outtime }}</td>
+      </tr>
+    </tbody>
+  </table> 
+-->

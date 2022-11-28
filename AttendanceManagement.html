@@ -1,0 +1,23 @@
+
+<div class="container col-md-6">
+   <h1 style="color:brown;">User Login</h1> 
+    <form (ngSubmit)="userLogin()">
+      <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">UserId</label>
+    <input type="text" [(ngModel)]="user.emailId" class="form-control" id="emailId" name="emailId"required #emailId="ngModel"
+    [class.is-invalid]="emailId.invalid && emailId.touched"
+    >
+    <small class="text-danger"[class.d-none]="emailId.valid || emailId.untouched">Email Id is required field</small>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">password</label>
+    <input type="password" [(ngModel)]="user.password" class="form-control" id="password" name="password">
+
+</div>
+<button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+
+<button type="submit" routerLink="register">Register</button>
+
+  
