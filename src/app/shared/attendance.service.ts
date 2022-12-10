@@ -17,4 +17,8 @@ export class AttendanceService {
     return this.httpClient.delete<any>('http://localhost:8080/deleteUserAttendence/'+ id);
   }
 
+  public updateUserAttendance(attendenceDatail: any): Observable<any> {
+    return this.httpClient.put<any>('http://localhost:8080/updateAttendence/', attendenceDatail);
+  }
+
 }

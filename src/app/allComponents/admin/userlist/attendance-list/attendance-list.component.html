@@ -20,23 +20,36 @@
                     <div class="col">
                       <input
                         type="date"
-                        formControlName="intime"
+                        formControlName="date"
                         class="form-control"
                         placeholder="Enter Date"
+                        [value]="currentAttendence?.date"
                       />
                     </div>
                     <br />
 
-                    <!-- <label for="outtime">Out Time</label>
+                    <label for="outtime">In Time</label>
+                    <input
+                        type="time"
+                        step="1"
+                        formControlName="intime"
+                        class="form-control"
+                        placeholder="Enter intime"
+                        [value]="currentAttendence?.intime"
+                    />
+                    <br/>
+
+                    <label for="outtime">Out Time</label>
                     <input
                         type="time"
                         step="1"
                         formControlName="outtime"
                         class="form-control"
                         placeholder="Enter Outtime"
-                    /> -->
+                        [value]="currentAttendence?.outtime"
+                    />
+                    <br/>
                 </div>
-
                     
             </div>
             <div class="modal-footer">
@@ -70,7 +83,7 @@
                     <td>{{attendance.intime}}</td>
                     <td>{{attendance.outtime}}</td>
                     <td>
-                        <button type="button" (click)="updateUserAttendance(attendance.id)" data-toggle="modal" data-target="#exampleModal">Update</button>
+                        <button type="button" (click)="updateUserAttendance(attendance)" data-toggle="modal" data-target="#exampleModal">Update</button>
                     </td>
                     <td>
                         <button type="button" (click)="deleteUserAttendance(attendance.id)">Delete</button>
