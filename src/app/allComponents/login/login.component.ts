@@ -31,11 +31,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      emailId: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      emailId: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required,Validators.minLength(5)]],
     });
   }
-
+ 
   onSubmit() {
     //  debugger;
     if (this.loginForm.valid) {
@@ -61,7 +61,14 @@ export class LoginComponent implements OnInit {
       );
     }
   }
-
+  get emailId()
+  {
+    return this.loginForm.get('emailId');
+  }
+  get password()
+  {
+    return this.loginForm.get('password');
+  }
   // userLogin() {
   //   console.log(this.user);
   //   this.loginuserservice.loginUser(this.user).subscribe(
