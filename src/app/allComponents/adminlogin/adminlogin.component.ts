@@ -45,5 +45,12 @@ export class AdminloginComponent implements OnInit {
         })
     }
   }
-
+  get username()
+  {
+    return this.adminForm.get('username');
+  }
+  get password()
+  {
+    return this.adminForm.get('password');
+  }
 }
